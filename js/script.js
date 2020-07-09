@@ -11,34 +11,9 @@ var mousex = mousey = 0;
 var p_poligono = false;
 
 var cor = $('#cor').val();
+var tamLinha = $("#tam_linha").val();
 
-//cor nos objetos
-function color(object) {
-    switch (object.id) {
-        case "green":
-            cor = "green";
-            break;
-        case "blue":
-            cor = "blue";
-            break;
-        case "red":
-            cor = "red";
-            break;
-        case "yellow":
-            cor = "yellow";
-            break;
-        case "orange":
-            cor = "orange";
-            break;
-        case "black":
-            cor = "black";
-            break;
-        case "white":
-            cor = "white";
-            break;
 
-    }
-}
 
 function draw(obj) {
     if (obj.id === 'linha') {
@@ -60,7 +35,7 @@ function clear() {
 
 function draw_poly(ctx, x, y) {
     if (p_poligono) {
-        ctx.lineWidth = 5;
+        ctx.lineWidth = tamLinha;
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.strokeStyle = cor;
@@ -116,7 +91,7 @@ canvas.onclick = function (evt) {
             ctx.moveTo(last_mousex, last_mousey);
             ctx.lineTo(mousex, mousey);
             ctx.strokeStyle = cor;
-            ctx.lineWidth = 5;
+            ctx.lineWidth = tamLinha;
             ctx.lineJoin = ctx.lineCap = 'round';
             ctx.stroke();
         }
@@ -127,6 +102,7 @@ canvas.onclick = function (evt) {
         if (d === 'ponto') {
             //desenha um ponto
             ctx.beginPath();
+            ctx.lineWidth = tamLinha;
             ctx.moveTo(axi.x, axi.y);
             ctx.arc(axi.x, axi.y, 5, 0, 2 * Math.PI, true);
             ctx.fill();
