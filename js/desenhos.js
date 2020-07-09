@@ -1,8 +1,8 @@
 //variaveis globais
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 var des = false;
-var d = '';
+var tipo_desenho = '';
 
 var canvasx = $(canvas).offset().left;
 var canvasy = $(canvas).offset().top;
@@ -10,35 +10,43 @@ var last_mousex = last_mousey = 0;
 var mousex = mousey = 0;
 var p_poligono = false;
 
-var cor = $('#cor').val();
+var cor = $("#cor").val();
 var tamLinha = $("#tam_linha").val();
 
+function color(obj) {
+    cor = obj.value
+}
+
+function widthLine(obj) {
+    tamLinha = obj.value
+}
 
 
 function draw(obj) {
     if (obj.id === 'linha') {
-        d = 'linha'
+        tipo_desenho = 'linha'
     }
     if (obj.id === 'poligono') {
-        d = 'poligono'
+        tipo_desenho = 'poligono'
     }
     if (obj.id === 'ponto') {
-        d = 'ponto'
+        tipo_desenho = 'ponto'
     }
 
 }
 
 function clear() {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function draw_poly(ctx, x, y) {
     if (p_poligono) {
-        ctx.lineWidth = tamLinha;
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.strokeStyle = cor;
+        ctx.fillStyle = cor;
+        ctx.lineWidth = tamLinha;
         ctx.lineJoin = ctx.lineCap = 'round';
         p_poligono = false;
     } else {
@@ -84,7 +92,7 @@ canvas.onclick = function (evt) {
 
 
     if (des) {
-        if (d === 'linha') {
+        if (tipo_desenho === 'linha') {
             //desenha segmento de reta
             ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas
             ctx.beginPath();
@@ -95,16 +103,18 @@ canvas.onclick = function (evt) {
             ctx.lineJoin = ctx.lineCap = 'round';
             ctx.stroke();
         }
-        if (d === 'poligono') {
+        if (tipo_desenho === 'poligono') {
             draw_poly(ctx, axi.x, axi.y)
         }
 
-        if (d === 'ponto') {
+        if (tipo_desenho === 'ponto') {
             //desenha um ponto
             ctx.beginPath();
-            ctx.lineWidth = tamLinha;
+
             ctx.moveTo(axi.x, axi.y);
-            ctx.arc(axi.x, axi.y, 5, 0, 2 * Math.PI, true);
+            ctx.arc(axi.x, axi.y, tamLinha, 0, 2 * Math.PI, true);
+            ctx.strokeStyle = cor;
+            ctx.fillStyle = cor;
             ctx.fill();
             ctx.stroke();
 

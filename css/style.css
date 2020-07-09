@@ -3,7 +3,7 @@ body {
     /*margin: 0;*/
     /*padding: 0;*/
     /*overflow: hidden;*/
-    background-color: #f0f0f0;
+    background-color: #a0a0a0;
 
 }
 
@@ -20,7 +20,7 @@ h1 {
 }
 
 canvas {
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     vertical-align: middle;
     margin: auto;
 
@@ -32,11 +32,6 @@ canvas {
     margin-top: 10px;
     display: block;
 }
-
-
-/*.canvas {*/
-/*  display: none;*/
-/*}*/
 
 
 
