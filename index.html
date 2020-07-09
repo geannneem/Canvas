@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="description" content="">
+    <meta name="keywords" content="HTML5, Canvas">
+    <meta name="author" content="Geanne Maynara">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML5 Canvas</title>
 
@@ -44,14 +47,14 @@
 <form action="">
     <div class="button">
         <label>Desenhar</label>
-        <button type="button" onclick="clear()">Apagar</button>
+        <button type="button" id="clear">Apagar</button>
         <button type="button" id="linha" onclick="draw(this)">Linha</button>
         <button type="button" id="poligono" onclick="draw(this)">Poligono</button>
         <button type="button" id="ponto" onclick="draw(this)">Ponto</button>
     </div>
     <div class="button">
         <label>Transformações</label>
-        <button type="button" id="translacao" ondblclick="mover(this)">Translação</button>
+        <button type="button" id="translacao" ondblclick="getClickPosition(this)">Translação</button>
         <button type="button" id="rotacao" onclick="draw(this)">Rotação</button>
         <button type="button" id="escala" onclick="draw(this)">Escala</button>
     </div>

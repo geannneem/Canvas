@@ -35,16 +35,15 @@ function draw(obj) {
 
 }
 
-function clear() {
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
+$("#clear").on('click', function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
+});
 
 function draw_poly(ctx, x, y) {
     if (p_poligono) {
         ctx.beginPath();
         ctx.moveTo(x, y);
-        ctx.strokeStyle = cor;
+        // ctx.strokeStyle = cor;
         ctx.fillStyle = cor;
         ctx.lineWidth = tamLinha;
         ctx.lineJoin = ctx.lineCap = 'round';
@@ -52,6 +51,7 @@ function draw_poly(ctx, x, y) {
     } else {
         ctx.lineTo(x, y);
         ctx.stroke();
+        // ctx.fill();
     }
 
 }

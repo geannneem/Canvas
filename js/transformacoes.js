@@ -1,9 +1,12 @@
 canvas.addEventListener("click", getClickPosition, false);
 
-function getClickPosition(e) {
-    var xPosition = e.clientX;
-    var yPosition = e.clientY;
+var x = $(canvas).offset().left;
+var y = $(canvas).offset().top;
 
-    var translate = translate(xPosition );
+function getClickPosition(e) {
+    var xPosition = parseInt(e.clientX - x);
+    var yPosition = parseInt(e.clientY - y);
+
+    ctx.translate(xPosition, yPosition)
 
 }
