@@ -1,0 +1,42 @@
+
+body {
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*overflow: hidden;*/
+    background-color: #f0f0f0;
+
+}
+
+
+* {
+    text-align: center;
+}
+
+h1 {
+    font-size: 16pt;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Arial sans-serif;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin: auto;
+
+
+}
+
+
+.button {
+    margin-top: 10px;
+    display: block;
+}
+
+
+/*.canvas {*/
+/*  display: none;*/
+/*}*/
+
+
+
