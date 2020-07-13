@@ -1,7 +1,7 @@
 //variaveis globais
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-var des = false;
+var des = false; // para desenhar primitivas
 var tipo_desenho = '';
 
 var canvasx = $(canvas).offset().left;
@@ -13,18 +13,21 @@ var p_poligono = false;
 var cor = $("#cor").val();
 var tamLinha = $("#tam_linha").val();
 
-function color(obj) {
+primitivas =[];
+
+function selecionaCor(obj) {
     cor = obj.value
 }
 
-function widthLine(obj) {
+function selecionaLinha(obj) {
     tamLinha = obj.value
 }
 
 
 function draw(obj) {
+
     if (obj.id === 'linha') {
-        tipo_desenho = 'linha'
+        tipo_desenho = 'linha';
     }
     if (obj.id === 'poligono') {
         tipo_desenho = 'poligono'
@@ -43,7 +46,7 @@ function draw_poly(ctx, x, y) {
     if (p_poligono) {
         ctx.beginPath();
         ctx.moveTo(x, y);
-        // ctx.strokeStyle = cor;
+        ctx.strokeStyle = cor;
         ctx.fillStyle = cor;
         ctx.lineWidth = tamLinha;
         ctx.lineJoin = ctx.lineCap = 'round';
@@ -75,13 +78,15 @@ canvas.onmousedown = function (evt) {
     // ctx.moveTo(axi.x, axi.y);
     des = true;
 }
-canvas.onmouseup = function () {
+canvas.onmousemove = function () {
     des = false;
+    // console.log(primitivas)
 }
 
 canvas.onclick = function (evt) {
     var axi = getMouse(evt);
     des = true;
+
     //
     // if (des) {
     //     ctx.lineTo(axi.x, axi.y);
@@ -92,12 +97,15 @@ canvas.onclick = function (evt) {
 
 
     if (des) {
+
         if (tipo_desenho === 'linha') {
+            primitivas.pop();
             //desenha segmento de reta
-            ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas
+            // ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas
             ctx.beginPath();
             ctx.moveTo(last_mousex, last_mousey);
             ctx.lineTo(mousex, mousey);
+            primitivas.push({x: mousex, y: mousey})
             ctx.strokeStyle = cor;
             ctx.lineWidth = tamLinha;
             ctx.lineJoin = ctx.lineCap = 'round';
@@ -113,6 +121,7 @@ canvas.onclick = function (evt) {
 
             ctx.moveTo(axi.x, axi.y);
             ctx.arc(axi.x, axi.y, tamLinha, 0, 2 * Math.PI, true);
+            primitivas.push({x: axi.x, y: axi.y})
             ctx.strokeStyle = cor;
             ctx.fillStyle = cor;
             ctx.fill();
@@ -121,4 +130,5 @@ canvas.onclick = function (evt) {
         }
 
     }
+
 }

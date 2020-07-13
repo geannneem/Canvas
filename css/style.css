@@ -20,6 +20,7 @@ h1 {
 }
 
 canvas {
+    cursor: crosshair;
     border: 1px solid #000000;
     vertical-align: middle;
     margin: auto;

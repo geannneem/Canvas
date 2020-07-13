@@ -23,7 +23,7 @@
     </pre>
         <form>
             <label>Cor</label>
-            <select  id="cor" onchange="color(this)">
+            <select id="cor" onchange="selecionaCor(this)">
                 <option value="black">Preto</option>
                 <option value="blue">Azul</option>
                 <option value="red">Vermelho</option>
@@ -33,28 +33,25 @@
             </select>
 
             <label>Tamanho da linha </label>
-            <select id="tam_linha" onchange="widthLine(this)">
-                <option value="3" >3</option>
+            <select id="tam_linha" onchange="selecionaLinha(this)">
+                <option value="3">3</option>
                 <option value="5">5</option>
                 <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
             </select>
+
+            <button type="button" id="clear">Limpar</button>
         </form>
-        <canvas id="canvas" width="900" height="400" style="border: 1px solid black;"></canvas>
+        <canvas id="canvas" class="cnv" width="900" height="400" style="border: 1px solid black;"></canvas>
 
 
     </div>
 </div>
 <form action="">
     <div class="button">
-        <label>Desenhar</label>
-        <button type="button" id="clear">Apagar</button>
-        <button type="button" id="linha" onclick="draw(this)">Linha</button>
-        <button type="button" id="poligono" onclick="draw(this)">Poligono</button>
-        <button type="button" id="ponto" onclick="draw(this)">Ponto</button>
-    </div>
-    <div class="button">
         <label>Transformações</label>
-        <button type="button" id="translacao" ondblclick="getClickPosition(this)">Translação</button>
+        <button type="button" id="translacao" value="true">Translação</button>
         <button type="button" id="rotacao" onclick="draw(this)">Rotação</button>
         <button type="button" id="escala" onclick="draw(this)">Escala</button>
     </div>
@@ -66,7 +63,7 @@
 
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/desenhos.js"></script>
-<script src="js/transformacoes.js"></script>
+<!--<script src="js/desenhos.js"></script>-->
 <!--<script src="js/transformacoes.js"></script>-->
+<script src="js/script.js"></script>
 </html>
