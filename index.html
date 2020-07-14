@@ -13,45 +13,43 @@
 </head>
 <body>
 <div>
-
-    <div class="box">
         <h1> Html5 e Canvas</h1>
         <pre>
         - arrastar e soltar (translacao)
         - rotacao em relacao ao centro do objeto
         - escala em relacao ao centro do objeto
     </pre>
-        <form>
-            <label>Cor</label>
-            <select id="cor" onchange="selecionaCor(this)">
-                <option value="black">Preto</option>
-                <option value="blue">Azul</option>
-                <option value="red">Vermelho</option>
-                <option value="green">Verde</option>
-                <option value="yellow">Amarelo</option>
-                <option value="gray">Cinza</option>
-            </select>
+<!--        <form>-->
+<!--            <label>Cor</label>-->
+<!--            <select id="cor" onchange="selecionaCor(this)">-->
+<!--                <option value="black">Preto</option>-->
+<!--                <option value="blue">Azul</option>-->
+<!--                <option value="red">Vermelho</option>-->
+<!--                <option value="green">Verde</option>-->
+<!--                <option value="yellow">Amarelo</option>-->
+<!--                <option value="gray">Cinza</option>-->
+<!--            </select>-->
 
-            <label>Tamanho da linha </label>
-            <select id="tam_linha" onchange="selecionaLinha(this)">
-                <option value="3">3</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-            </select>
+<!--            <label>Tamanho da linha </label>-->
+<!--            <select id="tam_linha" onchange="selecionaLinha(this)">-->
+<!--                <option value="3">3</option>-->
+<!--                <option value="5">5</option>-->
+<!--                <option value="10">10</option>-->
+<!--                <option value="15">15</option>-->
+<!--                <option value="20">20</option>-->
+<!--            </select>-->
 
-            <button type="button" id="clear">Limpar</button>
-        </form>
-        <canvas id="canvas" class="cnv" width="900" height="400" style="border: 1px solid black;"></canvas>
+<!--            <button type="button" id="clear">Limpar</button>-->
+<!--        </form>-->
+        <canvas id="canvas" width="1350" height="400" style="border: 1px solid black;"></canvas>
 
 
-    </div>
+
 </div>
 <form action="">
     <div class="button">
 
-        <button type="button" onclick="transf()">Transformações Geométricas</button>
+        <button type="button" id="tg">Transformações Geométricas</button>
 
     </div>
 </form>
@@ -64,5 +62,5 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <!--<script src="js/desenhos.js"></script>-->
 <script src="js/transformacoes.js"></script>
-<script src="js/script.js"></script>
+<!--<script src="js/script.js"></script>-->
 </html>

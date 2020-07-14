@@ -2,6 +2,7 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 var primitiva = false; // para desenhar primitivas
+var mover = false;
 
 
 var coordx = $(canvas).offset().left;
@@ -26,7 +27,7 @@ function selecionaLinha(obj) {
 
 $("#clear").on('click', function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    primitivas.cleanData()
+    primitivas= []
 });
 
 
@@ -48,13 +49,13 @@ canvas.onclick = function (evt) {
     py = parseInt(evt.clientY - coordy);
 
 
-    if (primitiva) {
+    if (primitiva && !mover) {
         
         // ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas
         ctx.beginPath();
         ctx.moveTo(posX, posY);
         ctx.lineTo(px, py);
-        primitivas.push({x: px, y: py, cor: cor, tam: tamLinha})
+        primitivas.push({mx:posX,my: posY, cx: px, cy: py, cor: cor, tam: tamLinha});
         ctx.strokeStyle = cor;
         ctx.lineWidth = tamLinha;
         ctx.lineJoin = ctx.lineCap = 'round';

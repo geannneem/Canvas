@@ -8,9 +8,9 @@ body {
 }
 
 
-* {
-    text-align: center;
-}
+/** {*/
+/*    text-align: center;*/
+/*}*/
 
 h1 {
     font-size: 16pt;
@@ -22,9 +22,9 @@ h1 {
 canvas {
     cursor: crosshair;
     border: 1px solid #000000;
-    vertical-align: middle;
-    margin: auto;
-
+    /*vertical-align: middle;*/
+    /*margin: auto;*/
+    background: #A0A0A0;
 
 }
 
