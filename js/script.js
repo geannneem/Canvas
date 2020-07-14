@@ -1,7 +1,7 @@
 //variaveis globais
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-var primitiva = false; // para desenhar primitivas
+
 var mover = false;
 
 

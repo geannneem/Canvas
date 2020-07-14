@@ -3,35 +3,44 @@ body {
     /*margin: 0;*/
     /*padding: 0;*/
     /*overflow: hidden;*/
-    background-color: #bebebe;
+    background-color: #e6e6e6;
+    font-family: "Comic Sans MS";
 
 }
 
-
-/** {*/
-/*    text-align: center;*/
-/*}*/
-
 h1 {
-    font-size: 16pt;
+    font-size: 14pt;
     text-transform: uppercase;
     text-align: center;
-    font-family: Arial sans-serif;
+    font-family: "Comic Sans MS";
+}
+
+pre, form {
+    font-family: "Comic Sans MS";
+
+    text-align: center;
 }
 
 canvas {
+
     cursor: crosshair;
     border: 1px solid #000000;
-    /*vertical-align: middle;*/
-    /*margin: auto;*/
-    background: #A0A0A0;
+    vertical-align: middle;
+    margin: 0;
+    background: #f3f3f3;
 
 }
 
 
-.button {
-    margin-top: 10px;
-    display: block;
+button {
+    margin-top: 5px;
+    display: inline-block;
+    border-radius: 0.15em;
+    text-align: center;
+    color: #000000;
+     background-color: #e0a2ae;
+     box-shadow: inset 0 -0.6em 0 -0.35em rgba(29, 29, 29, 0.76);
+
 }
 
 

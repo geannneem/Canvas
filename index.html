@@ -13,39 +13,36 @@
 </head>
 <body>
 <div>
-        <h1> Html5 e Canvas</h1>
-        <pre>
+    <h1> Html5 e Canvas</h1>
+    <pre>
         - arrastar e soltar (translacao)
         - rotacao em relacao ao centro do objeto
         - escala em relacao ao centro do objeto
     </pre>
-<!--        <form>-->
-<!--            <label>Cor</label>-->
-<!--            <select id="cor" onchange="selecionaCor(this)">-->
-<!--                <option value="black">Preto</option>-->
-<!--                <option value="blue">Azul</option>-->
-<!--                <option value="red">Vermelho</option>-->
-<!--                <option value="green">Verde</option>-->
-<!--                <option value="yellow">Amarelo</option>-->
-<!--                <option value="gray">Cinza</option>-->
-<!--            </select>-->
 
-<!--            <label>Tamanho da linha </label>-->
-<!--            <select id="tam_linha" onchange="selecionaLinha(this)">-->
-<!--                <option value="3">3</option>-->
-<!--                <option value="5">5</option>-->
-<!--                <option value="10">10</option>-->
-<!--                <option value="15">15</option>-->
-<!--                <option value="20">20</option>-->
-<!--            </select>-->
-
-<!--            <button type="button" id="clear">Limpar</button>-->
-<!--        </form>-->
-        <canvas id="canvas" width="1350" height="400" style="border: 1px solid black;"></canvas>
-
-
-
+    <canvas id="canvas" width="1330" height="400" style="border: 1px solid black;"></canvas>
 </div>
+<form>
+    <label>Cor</label>
+    <select id="cor" onchange="selecionaCor(this)">
+        <option value="black" style="color: black">Preto</option>
+        <option value="blue" style="color: blue">Azul</option>
+        <option value="red" style="color: red">Vermelho</option>
+        <option value="green" style="color: green">Verde</option>
+        <option value="orange" style="color: orange">Laranja</option>
+        <option value="gray" style="color: gray">Cinza</option>
+    </select>
+
+    <label>Tamanho da linha </label>
+    <select id="tam_linha" onchange="selecionaLinha(this)">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
+
+    <button type="button" id="clear">Limpar</button>
+</form>
 <form action="">
     <div class="button">
 
