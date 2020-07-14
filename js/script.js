@@ -26,6 +26,7 @@ function selecionaLinha(obj) {
 
 $("#clear").on('click', function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    primitivas.cleanData()
 });
 
 
@@ -53,7 +54,7 @@ canvas.onclick = function (evt) {
         ctx.beginPath();
         ctx.moveTo(posX, posY);
         ctx.lineTo(px, py);
-        primitivas.push({x: px, y: py})
+        primitivas.push({x: px, y: py, cor: cor, tam: tamLinha})
         ctx.strokeStyle = cor;
         ctx.lineWidth = tamLinha;
         ctx.lineJoin = ctx.lineCap = 'round';
@@ -68,3 +69,5 @@ document.addEventListener('keydown', function(event) {
         alert('Undo!');
     }
 });
+
+
