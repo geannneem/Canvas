@@ -10,16 +10,16 @@ function atualizarCanvas() {
 
     for (var i = 0; i < primitivas.length; i++) {
 
-        if(primitivas[i].tipo === 'poligono'){
+        if (primitivas[i].tipo === 'poligono') {
             ctx.fillStyle = primitivas[i].color;
             ctx.fillRect(primitivas[i].x, primitivas[i].y, primitivas[i].width, primitivas[i].height);
         }
-        if(primitivas[i].tipo === 'ponto'){
+        if (primitivas[i].tipo === 'ponto') {
             ctx.fillStyle = primitivas[i].color;
-            ctx.arc(primitivas[i].x,  primitivas[i].y,  primitivas[i].width, primitivas[i].height, 2 * Math.PI);
+            ctx.arc(primitivas[i].x, primitivas[i].y, primitivas[i].width, primitivas[i].height, 2 * Math.PI);
             ctx.fill()
         }
-        if(primitivas[i].tipo === 'reta'){
+        if (primitivas[i].tipo === 'reta') {
             ctx.beginPath()
             ctx.moveTo(primitivas[i].x, primitivas[i].y);
             ctx.lineTo(primitivas[i].width, primitivas[i].height);
@@ -33,24 +33,26 @@ function atualizarCanvas() {
 window.onload = function () {
     primitivas = [];
 
-    primitivas.push({ tipo: 'poligono',
+    primitivas.push({
+        tipo: 'poligono',
         x: 50, y: 120,
         width: 100, height: 200,
         color: 'orange'
     });
 
-    primitivas.push({ tipo: 'ponto',
-        x: 100, y: 100,
-        width: 20, height: 0,
-        color: 'green'
-    });
-
-    primitivas.push({ tipo: 'reta',
-        x: 80, y: 20,
-        width: 300, height: 300,
-        color: 'pink'
-    });
-
+    // primitivas.push({
+    //     tipo: 'ponto',
+    //     x: 100, y: 100,
+    //     width: 20, height: 0,
+    //     color: 'green'
+    // });
+    //
+    // primitivas.push({
+    //     tipo: 'reta',
+    //     x: 80, y: 20,
+    //     width: 300, height: 300,
+    //     color: 'pink'
+    // });
 
 
     atualizarCanvas();
@@ -68,12 +70,12 @@ window.onload = function () {
 
 
                 break;
-            }
-            else{
-                ctx.translate( primitivas[i].x+primitivas[i].width/2, primitivas[i].y+primitivas[i].height/2 );
-                ctx.rotate( Math.PI/4 );
-                ctx.translate( -primitivas[i].x-primitivas[i].width/2, -primitivas[i].y-primitivas[i].height/2 );
-                ctx.fillRect( primitivas[i].x, primitivas[i].y, primitivas[i].width, primitivas[i].height );
+            } else {
+                ctx.save();
+                ctx.translate(primitivas[i].x + primitivas[i].width / 2, primitivas[i].y + primitivas[i].height / 2);
+                ctx.rotate(Math.PI / 4);
+                ctx.translate(-primitivas[i].x - primitivas[i].width / 2, -primitivas[i].y - primitivas[i].height / 2);
+                ctx.fillRect(primitivas[i].x, primitivas[i].y, primitivas[i].width, primitivas[i].height);
                 break;
             }
         }
