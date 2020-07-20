@@ -1,8 +1,7 @@
 //variaveis globais
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 
-var mover = false;
 
 
 var coordx = $(canvas).offset().left;
@@ -11,8 +10,8 @@ var posX = posY = 0;
 var px = py = 0;
 
 
-var cor = $("#cor").val();
-var tamLinha = $("#tam_linha").val();
+var cor = $(".btn-color").val();
+var tamLinha = $(".btn-brush").val();
 
 primitivas = [];
 
@@ -27,6 +26,7 @@ function selecionaLinha(obj) {
 
 $("#clear").on('click', function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    cntext.clearRect(0, 0, canvas.width, canvas.height);
     primitivas= []
 });
 
@@ -37,8 +37,10 @@ canvas.onmousedown = function (evt) {
 
     primitiva = true;
 }
+
 canvas.onmousemove = function () {
     primitiva = false;
+
     // console.log(primitivas)
 }
 
@@ -49,13 +51,13 @@ canvas.onclick = function (evt) {
     py = parseInt(evt.clientY - coordy);
 
 
-    if (primitiva && !mover) {
-        
+    if (primitiva) {
+
         // ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas
         ctx.beginPath();
         ctx.moveTo(posX, posY);
         ctx.lineTo(px, py);
-        primitivas.push({mx:posX,my: posY, cx: px, cy: py, cor: cor, tam: tamLinha});
+
         ctx.strokeStyle = cor;
         ctx.lineWidth = tamLinha;
         ctx.lineJoin = ctx.lineCap = 'round';

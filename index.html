@@ -12,45 +12,70 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div>
+<div id="titulo">
     <h1> Html5 e Canvas</h1>
-<!--    <pre>-->
-<!--        - arrastar e soltar (translacao)-->
-<!--        - rotacao em relacao ao centro do objeto-->
-<!--        - escala em relacao ao centro do objeto-->
-<!--    </pre>-->
-
-    <canvas id="canvas" width="1330" height="400" style="border: 1px solid black;"></canvas>
 </div>
-<form>
-    <label>Cor</label>
-    <select id="cor" onchange="selecionaCor(this)">
-        <option value="black" style="color: black">Preto</option>
-        <option value="blue" style="color: blue">Azul</option>
-        <option value="red" style="color: red">Vermelho</option>
-        <option value="green" style="color: green">Verde</option>
-        <option value="orange" style="color: orange">Laranja</option>
-        <option value="gray" style="color: gray">Cinza</option>
-    </select>
 
-    <label>Tamanho da linha </label>
-    <select id="tam_linha" onchange="selecionaLinha(this)">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-    </select>
+<div id="panel-left">
+    <div id="colors">
+        <button type="button" class="btn-color" style="background-color:red" value="red"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:orange" value="orange"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:yellow" value="yellow"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:green" value="green"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:blue" value="blue"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:purple" value="purple"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:black" value="black"
+                onclick="selecionaCor(this)"></button>
+        <button type="button" class="btn-color" style="background-color:gray" value="gray"
+                onclick="selecionaCor(this)"></button>
 
-    <button type="button" id="clear">Limpar</button>
-</form>
+    </div>
+    <div id="brushes">
+        <button type="button" class="btn-brush" style="height: 3px" value="5" onclick="selecionaLinha(this)"></button>
+        <button type="button" class="btn-brush" style="height: 10px" value="10" onclick="selecionaLinha(this)"></button>
+        <button type="button" class="btn-brush" style="height: 15px" value="15" onclick="selecionaLinha(this)"></button>
+        <button type="button" class="btn-brush" style="height: 20px" value="20" onclick="selecionaLinha(this)"></button>
+
+    </div>
+    <div id="btns">
+        <button type="button" id="clear">LIMPAR</button>
+    </div>
+</div>
+
+<div id="panel-right">
+    <div>
+        <button type="button" class="btn-transf" value="rotacao" id="rotacao" onclick="transformacoes(this)">ROTAÇÃO
+        </button>
+        <button type="button" class="btn-transf" value="translacao" id="translacao" onclick="transformacoes(this)">
+            TRANSLAÇÃO
+        </button>
+        <button type="button" class="btn-transf" value="escala" id="escala" onclick="transformacoes(this)">ESCALA
+        </button>
+    </div>
 
 
+
+
+
+
+</div>
+<div >
+    <canvas id="canvas2" width="950" height="250" style=" border-top: 1px solid #000000;"></canvas>
+</div>
+<div>
+    <canvas id="canvas1" width="950" height="250" style="border-bottom: 1px solid #000000;" ></canvas>
 </div>
 
 
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<!--<script src="js/transformacoes.js"></script>-->
+<script src="js/transformacoes.js"></script>
 <script src="js/script.js"></script>
 </html>

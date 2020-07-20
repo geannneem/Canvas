@@ -3,7 +3,7 @@ body {
     /*margin: 0;*/
     /*padding: 0;*/
     /*overflow: hidden;*/
-    background-color: #e6e6e6;
+    background-color: #ebebeb;;
     font-family: "Comic Sans MS";
 
 }
@@ -21,27 +21,89 @@ pre, form {
     text-align: center;
 }
 
-canvas {
-
-    cursor: crosshair;
+#panel-left {
+    float: right;
+    padding-top: 80px;
     border: 1px solid #000000;
-    vertical-align: middle;
-    margin: 0;
-    background: #ebebeb;
+    position: fixed;
+    padding-bottom: 75px;
+    border-right: 1px solid #e0e0e0;
+    background-color: #c9c7c7;
+    width: 100px;
 
 }
 
-
-button {
-    margin-top: 5px;
-    display: inline-block;
-    border-radius: 0.15em;
+#panel-right {
+    float: left !important;
+    padding-top: 215px;
+    padding-bottom: 220px;
+    margin-left: 840px;
+    border: 1px solid #000000;
+    position: fixed;
+    border-left: 1px solid #e0e0e0;
+    background-color: #c9c7c7;
+    width: 110px;
     text-align: center;
-    color: #000000;
-     background-color: #e0a2ae;
-     box-shadow: inset 0 -0.6em 0 -0.35em rgba(29, 29, 29, 0.76);
+
+}
+canvas {
+    cursor: crosshair;
 
 }
 
 
+/*button {*/
+/*    margin-top: 5px;*/
+/*    display: inline-block;*/
+/*    border-radius: 0.15em;*/
+/*    text-align: center;*/
+/*    color: #000000;*/
+/*     background-color: #e0a2ae;*/
+/*     box-shadow: inset 0 -0.6em 0 -0.35em rgba(29, 29, 29, 0.76);*/
 
+/*}*/
+
+
+.btn-color {
+
+    display: inline-block;
+    border: 1px solid #00000026;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px
+}
+
+#brushes {
+    padding-top: 50px;
+}
+
+.btn-brush {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    background-color: #ffffff;;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 30px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+#btns {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 51px;
+    padding-top: 100px;
+    height: 30px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
